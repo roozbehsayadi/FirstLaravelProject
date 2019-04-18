@@ -18,9 +18,9 @@ Route::get('/', function () {
 Route::get('/welcome', function() {
    return 'Welcome to you';
 });
-/*
+
 Route::get('/test', function() {
-	return view( 'test' );
+	return view( 'test', [ 'name' => 'Roozbeh' ] );
 });
-*/
-Route::view( '/test', 'test', [ 'name' => 'Roozbeh' ] );
+
+//Route::view( '/test', 'test', [ 'name' => 'Roozbeh'] );
