@@ -23,4 +23,4 @@ Route::get('/test', function() {
 	return view( 'test' );
 });
 */
-Route::view( '/test', 'test' );
+Route::view( '/test', 'test', [ 'name' => 'Roozbeh' ] );
