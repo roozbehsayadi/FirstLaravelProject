@@ -15,8 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::match( [], 'test', function() {
-
-    return 'Hello World';
+Route::get('/welcome', function() {
+   return 'Welcome to you';
 });
 
+Route::get('/test', function() {
+	return view( 'test' );
+});
