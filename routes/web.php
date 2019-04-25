@@ -11,16 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/welcome', function() {
-   return 'Welcome to you';
-});
+Route::view( '/home', 'home' );
 
-Route::get('/test/{name}', function($name) {
-	return view( 'test', [ 'name' => $name ] );
-});
+Route::view( '/aboutus', 'aboutus' );
+
+Route::view( '/contact', 'contact');
+
+Route::redirect('/', '/home' );
+
+//Route::get('/welcome', function() {
+//   return 'Welcome to you';
+//});
+//
+//Route::get('/test/{name}', function($name) {
+//	return view( 'test', [ 'name' => $name ] );
+//});
 
 //Route::view( '/test', 'test', [ 'name' => 'Roozbeh'] );
