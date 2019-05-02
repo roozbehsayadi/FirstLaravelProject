@@ -23,6 +23,8 @@ Route::view( '/contact', 'contact');
 
 Route::redirect('/', '/home' );
 
+Route::get( '/user/show', 'UserController@show' );
+
 //Route::get('/welcome', function() {
 //   return 'Welcome to you';
 //});
