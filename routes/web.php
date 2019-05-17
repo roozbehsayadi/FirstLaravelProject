@@ -25,6 +25,12 @@ Route::redirect('/', '/home' );
 
 Route::get( '/user/show', 'UserController@show' );
 
+Route::post( '/blog/add', 'BlogController@add' );
+
+Route::get( '/blog/add', function (){
+	return view( 'addblog' );
+});
+
 //Route::get('/welcome', function() {
 //   return 'Welcome to you';
 //});
