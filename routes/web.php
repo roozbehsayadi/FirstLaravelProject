@@ -31,6 +31,10 @@ Route::get( '/blog/add', function (){
 	return view( 'addblog' );
 });
 
+Route::get( '/blogslist', 'BlogController@list' );
+
+Route::get( 'blog/post/{id}', 'BlogController@showContent' );
+
 //Route::get('/welcome', function() {
 //   return 'Welcome to you';
 //});
