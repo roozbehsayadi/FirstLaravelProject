@@ -31,9 +31,21 @@ Route::get( '/blog/add', function (){
 	return view( 'addblog' );
 });
 
-Route::get( '/blogslist', 'BlogController@list' );
+Route::get( '/blogslist', function() {
+	return view('blogslist', ['data' => App\Blog::get() ] );
+});
 
-Route::get( 'blog/post/{id}', 'BlogController@showContent' );
+Route::get( '/blog/post/{id}', function($id){
+	$data = App\Blog::where('id', $id)->get();
+	return view( 'blogcontent', ['data'=>$data] );
+});
+
+Route::get( '/blog/edit/{id}', function($id) {
+	$data = App\Blog::where( 'id', $id )->get()->toArray();
+	return view ('editblog', ['data'=>$data[0]] );
+});
+
+Route::post( '/blog/edit/{id}', 'BlogController@edit');
 
 //Route::get('/welcome', function() {
 //   return 'Welcome to you';
